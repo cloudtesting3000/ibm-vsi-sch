@@ -6,7 +6,7 @@ variable region {
 }
 
 variable instance_name {
-  default = "vsi-public-3"
+  default = "vsi-public-test-sch"
 }
 
 variable profile {
