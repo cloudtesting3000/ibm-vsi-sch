@@ -5,6 +5,10 @@ variable region {
   default = "ca-tor"
 }
 
+variable "resource_group" {
+  type = string
+}
+
 variable instance_name {
   default = "vsi-public-test-sch"
 }

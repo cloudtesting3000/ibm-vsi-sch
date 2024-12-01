@@ -5,11 +5,16 @@ data "ibm_is_instance_profile" "profile" {
    name = var.profile
 }
 
+data "ibm_resource_group" "rg" {
+  name = var.resource_group
+}
+
 data "ibm_is_image" "image" {
    name = var.image
 }
 
 resource "ibm_is_instance" "vsi1_instance" {
+  resource_group = data.ibm_resource_group.rg.id
   name    = var.instance_name
   image   = data.ibm_is_image.image.id
   profile = data.ibm_is_instance_profile.profile.name
